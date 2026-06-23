@@ -1,5 +1,6 @@
 from random import *
 from math import *
+from sys import *
 
 DIFFICULTY_COEFFICIENT = 1
 
@@ -173,7 +174,6 @@ def determine_hit(coordinates: tuple) -> str:
     
     if tan(radians(99)) * x - y > 0 and tan(radians(117)) * x - y < 0:
         return loc + '5'
-
 
 def generate_coordinates(aimpoint: tuple, r: int) -> tuple:
     xdist = randint(-r,r)
