@@ -1,6 +1,7 @@
 from random import *
 from math import *
-from sys import *
+import sys
+import game
 
 DIFFICULTY_COEFFICIENT = 1
 
@@ -184,8 +185,27 @@ def generate_coordinates(aimpoint: tuple, r: int) -> tuple:
 
 def main():
 
-    coords = generate_coordinates(aimpoints['T17'],30)
-    print(determine_hit(coords))
+    if len(sys.argv) != 2:
+        print('invalid amount of arguments')
+        return None
+    
+    try:
+        difficulty = int(sys.argv[1])
+    except ValueError as e:
+        print('invalid usage')
+        return None
+    
+    print('starting game on difficulty',difficulty)
+
+    new_game = game.Game(1)
+
+    entry = input('enter your hits: ')
+
+    board = new_game.enter_hits(1,entry)
+
+    #print(board)
+    
+
 
 if __name__ == '__main__':
     main()
