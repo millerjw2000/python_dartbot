@@ -2,14 +2,15 @@ import re
 import copy
 
 fresh_board = {     
-                    '0' : [0,0],
-                    '15' : [0,15],
-                    '16' : [0,16],
-                    '17' : [0,17],
-                    '18' : [0,18],
-                    '19' : [0,19],
+                    
                     '20' : [0,20],
-                    'BULL' : [0,25]
+                    '19' : [0,19],
+                    '18' : [0,18],
+                    '17' : [0,17],
+                    '16' : [0,16],
+                    '15' : [0,15],
+                    'BULL' : [0,25],
+                    '0' : [0,0]
                 }
 
 acceptable_hits = [
@@ -26,7 +27,7 @@ acceptable_hits = [
                     '18',
                     'D18',
                     'T18',
-                    '18',
+                    '19',
                     'D19',
                     'T19',
                     '20',
@@ -38,15 +39,16 @@ acceptable_hits = [
 
 class Game:
 
-    def __init__(self,difficulty):
+    def __init__(self):
         
-        self.difficulty = difficulty
-
         self.player_scores = [0,0]
         self.player_boards = [
                             copy.deepcopy(fresh_board),
                             copy.deepcopy(fresh_board)
                             ]
+        
+    def check_for_win(self) -> bool:
+        pass
 
 
     def update_scores(self) -> None:
@@ -108,5 +110,5 @@ class Game:
 
         self.update_scores()
 
-        print(self.player_scores[0],self.player_scores[1])
+        #print(self.player_scores[0],self.player_scores[1])
         return self.player_boards
