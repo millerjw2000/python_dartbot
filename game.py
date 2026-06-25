@@ -68,45 +68,40 @@ class Game:
             self.player_scores[player_index] = player_score
 
 
-    def enter_hits(self, player: int, entry: str) -> list:
-
-        hits = entry.split()
+    def enter_hit(self, player: int, hit: str) -> list:
 
         player_index = player - 1
+   
+        if hit.upper() not in acceptable_hits:
 
-        if 1 < player < 0:
-            raise Exception('Invalid player selection')
-
-        if len(hits) != 3:
-            raise Exception('Invalid number of entries') 
-        
-        for hit in hits:
             
-            if hit.upper() not in acceptable_hits:
-                raise Exception(f"'{hit}' is not an acceptable entry")
+            #raise Exception(f"'{hit}' is not an acceptable entry")
+            print(hit,'is not an acceptable entry - entering a 0')
+            self.player_boards[player_index]['0'][0] += 1
+            return self.player_boards
             
-        for hit in hits:
 
-            if re.fullmatch(r"\d+", hit): # a single number
 
-                self.player_boards[player_index][hit][0] += 1
+        if re.fullmatch(r"\d+", hit): # a single number
 
-            elif re.fullmatch(r"[A-Za-z]\d{1,2}", hit): # a double or triple + number
+            self.player_boards[player_index][hit][0] += 1
 
-                if hit[0].upper() == 'T':
+        elif re.fullmatch(r"[A-Za-z]\d{1,2}", hit): # a double or triple + number
+
+            if hit[0].upper() == 'T':
                     
-                    self.player_boards[player_index][hit[1:]][0] += 3
+                self.player_boards[player_index][hit[1:]][0] += 3
 
-                elif hit[0].upper() == 'D':
-                    self.player_boards[player_index][hit[1:]][0] += 2
+            elif hit[0].upper() == 'D':
+                self.player_boards[player_index][hit[1:]][0] += 2
 
-            elif hit.upper() == 'BULL': # bull
+        elif hit.upper() == 'BULL': # bull
 
-                self.player_boards[player_index][hit][0] += 1
+            self.player_boards[player_index][hit][0] += 1
 
-            elif hit.upper() == 'DBULL': # double bull
+        elif hit.upper() == 'DBULL': # double bull
 
-                self.player_boards[player_index][hit][0] += 2
+            self.player_boards[player_index][hit][0] += 2
 
         self.update_scores()
 

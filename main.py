@@ -26,17 +26,30 @@ def main():
 
     while (True):
 
-        entry = input('enter your hits: ')
+        for i in range(3):
 
-        new_game.enter_hits(entry)
+            entry = input('enter your hit: ')
+            new_game.enter_hit(1,entry)
 
-        bot_entry = ''
+        print(new_game.player_boards)
+        print(new_game.player_scores)
+
         for i in range(3):
 
             aim = bigbot.decide_aimpoint(new_game)
-            bot_entry += aim + ' '
+            print('bot is aiming at',aim)
+            actual_hit = bigbot.determine_hit(aim)
+            print('bot hit a',actual_hit)
+            new_game.enter_hit(2,actual_hit)
 
-        print(bot_entry)
+        print(new_game.player_boards)
+        print(new_game.player_scores)
+
+        
+            
+            
+
+        
 
 if __name__ == '__main__':
     main()
