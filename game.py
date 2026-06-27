@@ -48,7 +48,20 @@ class Game:
                             ]
         
     def check_for_win(self) -> bool:
-        pass
+        
+        if self.player_scores[0] >= self.player_scores[1]:
+
+            if self.player_boards[0]['20'][0] >= 3 and self.player_boards[0]['19'][0] >= 3 and self.player_boards[0]['18'][0] >= 3 and self.player_boards[0]['17'][0] >= 3 and self.player_boards[0]['16'][0] >= 3 and self.player_boards[0]['15'][0] >= 3 and self.player_boards[0]['BULL'][0] >= 3:
+                return True
+
+        if self.player_scores[1] >= self.player_scores[0]:
+
+            if self.player_boards[1]['20'][0] >= 3 and self.player_boards[1]['19'][0] >= 3 and self.player_boards[1]['18'][0] >= 3 and self.player_boards[1]['17'][0] >= 3 and self.player_boards[1]['16'][0] >= 3 and self.player_boards[1]['15'][0] >= 3 and self.player_boards[1]['BULL'][0] >= 3:
+                return True
+            
+        return False
+
+
 
 
     def update_scores(self) -> None:
@@ -71,8 +84,9 @@ class Game:
     def enter_hit(self, player: int, hit: str) -> list:
 
         player_index = player - 1
+        hit = hit.upper()
    
-        if hit.upper() not in acceptable_hits:
+        if hit not in acceptable_hits:
 
             
             #raise Exception(f"'{hit}' is not an acceptable entry")
@@ -88,22 +102,23 @@ class Game:
 
         elif re.fullmatch(r"[A-Za-z]\d{1,2}", hit): # a double or triple + number
 
-            if hit[0].upper() == 'T':
+            if hit[0] == 'T':
                     
                 self.player_boards[player_index][hit[1:]][0] += 3
 
-            elif hit[0].upper() == 'D':
+            elif hit[0] == 'D':
                 self.player_boards[player_index][hit[1:]][0] += 2
 
-        elif hit.upper() == 'BULL': # bull
+        elif hit == 'BULL': # bull
 
             self.player_boards[player_index][hit][0] += 1
 
-        elif hit.upper() == 'DBULL': # double bull
+        elif hit == 'DBULL': # double bull
 
-            self.player_boards[player_index][hit][0] += 2
+            self.player_boards[player_index]['BULL'][0] += 2
 
         self.update_scores()
 
         #print(self.player_scores[0],self.player_scores[1])
         return self.player_boards
+

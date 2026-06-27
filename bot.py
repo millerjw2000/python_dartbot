@@ -112,13 +112,19 @@ class Bot:
                 
                 if game_boards[1][key][0] >= 3 and game_boards[0][key][0] < 3:
 
-                    return key
+                    if key != 'BULL':
+                        return 'T' + key
+                    else:
+                        return 'DBULL'
 
             for key in game_boards[0]:
                 
                 if game_boards[0][key][0] < 3:
 
-                    return key
+                    if key != 'BULL':
+                        return 'T' + key
+                    else:
+                        return 'DBULL'
         
         elif player_scores[1] >= player_scores[0]:      
             
@@ -126,7 +132,12 @@ class Bot:
 
                 if game_boards[1][key][0] < 3:
 
-                    return key
+                    if key != 'BULL':
+                        return 'T' + key
+                    else:
+                        return 'DBULL'
+                    
+        return 'DBULL'
 
     def determine_hit(self, aimpoint: str) -> str:
 

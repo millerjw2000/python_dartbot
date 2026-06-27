@@ -31,6 +31,10 @@ def main():
             entry = input('enter your hit: ')
             new_game.enter_hit(1,entry)
 
+        if new_game.check_for_win():
+            print('player 1 wins!')
+            break
+
         print(new_game.player_boards)
         print(new_game.player_scores)
 
@@ -42,14 +46,12 @@ def main():
             print('bot hit a',actual_hit)
             new_game.enter_hit(2,actual_hit)
 
+        if new_game.check_for_win():
+            print('player 2 wins!')
+            break
+
         print(new_game.player_boards)
-        print(new_game.player_scores)
-
-        
-            
-            
-
-        
+        print(new_game.player_scores)   
 
 if __name__ == '__main__':
     main()
