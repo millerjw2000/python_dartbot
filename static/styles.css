@@ -34,4 +34,68 @@ footer {
 #dartboard {
     width: 500px;
     height: 500px;
+    margin-top: .5rem;
 }
+
+.scoreboard {
+    margin: 3rem;
+}
+
+.scoreboard table {
+    border: 1px solid var(--secondary-color);
+}
+
+.form_section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entry_section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.entries {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 1;
+    font-size: .75rem;
+}
+
+.undo_button {
+    margin-left: auto;
+}
+
+.entries div {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-color);
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit {
+    border-style: none;
+    font-family: inherit;
+    width: 10rem;
+    align-self: center;
+    height: 2rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: .5rem;
+    background-color: var(--primary-color);
+    font-size: .75rem;
+    color: inherit;
+}
+
+#submit:hover {
+    background-color: gray;
+}
+

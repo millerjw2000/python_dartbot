@@ -36,9 +36,9 @@ const board = document.getElementById("dartboard");
 let throws = []
 
 function renderEntries() {
-    document.getElementById('dart1').textContent = throws[0] || '-'
-    document.getElementById('dart2').textContent = throws[1] || '-'
-    document.getElementById('dart3').textContent = throws[2] || '-'
+    document.getElementById('dart1').textContent = throws[0] || ''
+    document.getElementById('dart2').textContent = throws[1] || ''
+    document.getElementById('dart3').textContent = throws[2] || ''
 }
 
 function getArea(r, angle) {

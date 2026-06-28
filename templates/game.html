@@ -5,46 +5,91 @@ game page
 {% endblock %}
 
 {% block content %}
-    <h1> Game Page!</h1>
 
-    <div class="board">
-        player 1
-        <ul>
-            <li id="player_1_num_20s">-</li>
-            <li id="player_1_num_19s">-</li>
-            <li id="player_1_num_18s">-</li>
-            <li id="player_1_num_17s">-</li>
-            <li id="player_1_num_16s">-</li>
-            <li id="player_1_num_15s">-</li>
-            <li id="player_1_num_bulls">-</li>
-            <li id="player_1_score"></li>
-        </ul>     
+    <div class="scoreboard">
+        <table>
+            <thead>
+                <th colspan="2">Player 1</th>
+            </thead>
+            <tbody>
+                                <tr>
+                    <td>20</td><td id="player_1_num_20s">-</td>
+                </tr>
+                <tr>
+                    <td>19</td><td id="player_1_num_19s">-</td>
+                </tr>
+                <tr>
+                    <td>18</td><td id="player_1_num_18s">-</td>
+                </tr>
+                <tr>
+                    <td>17</td><td id="player_1_num_17s">-</td>
+                </tr>
+                <tr>
+                    <td>16</td><td id="player_1_num_16s">-</td>
+                </tr>
+                <tr>
+                    <td>15</td><td id="player_1_num_15s">-</td>
+                </tr>
+                <tr>
+                    <td>BULL</td><td id="player_1_num_bulls">-</td>
+                </tr>
+                <tr>
+                    <td colspan='2' id="player_1_score">0</td>
+                </tr>
+            </tbody>
+        </table>        
     </div>
     
-    <div>
+    <div class="dartboard">
         <img id="dartboard" src="{{ url_for('static', filename='dartboard.png') }}">
-        <div id="entries">
-            <span id="dart1">-</span>
-            <span id="dart2">-</span>
-            <span id="dart3">-</span>
+        <div class="form_section">
+            <div class="entry_section">
+                <div class="entries">
+                    <div id="dart1"></div>
+                    <div id="dart2"></div>
+                    <div id="dart3"></div>
+                </div>
+                <div class="undo_button">
+                    <button id="undo">Undo</button>
+                </div> 
+            </div>
+            <button id="submit">Submit</button>
         </div>
+        
     </div>
 
-    <button id="undo">Undo</button>
-    <button id="submit">Submit</button>
-
-    <div class="board">
-        player 2
-        <ul>
-            <li id="player_2_num_20s">-</li>
-            <li id="player_2_num_19s">-</li>
-            <li id="player_2_num_18s">-</li>
-            <li id="player_2_num_17s">-</li>
-            <li id="player_2_num_16s">-</li>
-            <li id="player_2_num_15s">-</li>
-            <li id="player_2_num_bulls">-</li>
-            <li id="player_2_score"></li>
-        </ul>     
+    <div class="scoreboard">
+        <table>
+            <thead>
+                <th colspan="2">Player 2</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>20</td><td id="player_2_num_20s">-</td>
+                </tr>
+                <tr>
+                    <td>19</td><td id="player_2_num_19s">-</td>
+                </tr>
+                <tr>
+                    <td>18</td><td id="player_2_num_18s">-</td>
+                </tr>
+                <tr>
+                    <td>17</td><td id="player_2_num_17s">-</td>
+                </tr>
+                <tr>
+                    <td>16</td><td id="player_2_num_16s">-</td>
+                </tr>
+                <tr>
+                    <td>15</td><td id="player_2_num_15s">-</td>
+                </tr>
+                <tr>
+                    <td>BULL</td><td id="player_2_num_bulls">-</td>
+                </tr>
+                <tr>
+                    <td colspan='2' id="player_2_score">0</td>
+                </tr>
+            </tbody>
+        </table>   
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
