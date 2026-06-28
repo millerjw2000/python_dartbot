@@ -62,8 +62,6 @@ class Game:
         return False
 
 
-
-
     def update_scores(self) -> None:
 
         for player_index in range(2):

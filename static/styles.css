@@ -26,5 +26,12 @@ footer {
 }
 
 .content {
-    flex: 1
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#dartboard {
+    width: 500px;
+    height: 500px;
 }
