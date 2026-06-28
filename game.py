@@ -10,11 +10,9 @@ fresh_board = {
                     '16' : [0,16],
                     '15' : [0,15],
                     'BULL' : [0,25],
-                    '0' : [0,0]
                 }
 
 acceptable_hits = [
-                    '0',
                     '15',
                     'D15',
                     'T15',
@@ -89,7 +87,6 @@ class Game:
             
             #raise Exception(f"'{hit}' is not an acceptable entry")
             print(hit,'is not an acceptable entry - entering a 0')
-            self.player_boards[player_index]['0'][0] += 1
             return self.player_boards
             
 

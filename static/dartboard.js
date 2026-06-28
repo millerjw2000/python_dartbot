@@ -1,3 +1,36 @@
+function renderBoard(gameState) {
+
+    document.getElementById('player_1_num_20s').textContent = gameState.player_1_board["20"][0]
+    document.getElementById('player_1_num_19s').textContent = gameState.player_1_board["19"][0]
+    document.getElementById('player_1_num_18s').textContent = gameState.player_1_board["18"][0]
+    document.getElementById('player_1_num_17s').textContent = gameState.player_1_board["17"][0]
+    document.getElementById('player_1_num_16s').textContent = gameState.player_1_board["16"][0]
+    document.getElementById('player_1_num_15s').textContent = gameState.player_1_board["15"][0]
+    document.getElementById('player_1_num_bulls').textContent = gameState.player_1_board["BULL"][0]
+    document.getElementById('player_1_score').textContent = gameState.player_1_score
+
+    document.getElementById('player_2_num_20s').textContent = gameState.player_2_board["20"][0]
+    document.getElementById('player_2_num_19s').textContent = gameState.player_2_board["19"][0]
+    document.getElementById('player_2_num_18s').textContent = gameState.player_2_board["18"][0]
+    document.getElementById('player_2_num_17s').textContent = gameState.player_2_board["17"][0]
+    document.getElementById('player_2_num_16s').textContent = gameState.player_2_board["16"][0]
+    document.getElementById('player_2_num_15s').textContent = gameState.player_2_board["15"][0]
+    document.getElementById('player_2_num_bulls').textContent = gameState.player_2_board["BULL"][0]
+    document.getElementById('player_2_score').textContent = gameState.player_2_score
+
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const response = await fetch("/update_game");
+
+    const gameState = await response.json();
+
+    console.log(gameState);
+    renderBoard(gameState)
+
+});
+
 const board = document.getElementById("dartboard");
 
 let throws = []
@@ -133,7 +166,7 @@ document.getElementById("undo").onclick = function () {
 }
 
 document.getElementById("submit").addEventListener("click", async () => {
-
+    
     const response = await fetch("/update_game", {
         method: "POST",
         headers: {
@@ -145,6 +178,10 @@ document.getElementById("submit").addEventListener("click", async () => {
     });
 
     const gameState = await response.json();
-
+    renderBoard(gameState)
     console.log(gameState);
+
+    throws = []
+    renderEntries()
+
 });

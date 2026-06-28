@@ -10,13 +10,15 @@ game page
     <div class="board">
         player 1
         <ul>
-            {% for key in boards[0] %}
-                <li>
-                    {{key}} {{boards[0][key][0]}}
-                </li>
-            {% endfor %}
-        </ul>
-            
+            <li id="player_1_num_20s">-</li>
+            <li id="player_1_num_19s">-</li>
+            <li id="player_1_num_18s">-</li>
+            <li id="player_1_num_17s">-</li>
+            <li id="player_1_num_16s">-</li>
+            <li id="player_1_num_15s">-</li>
+            <li id="player_1_num_bulls">-</li>
+            <li id="player_1_score"></li>
+        </ul>     
     </div>
     
     <div>
@@ -30,6 +32,20 @@ game page
 
     <button id="undo">Undo</button>
     <button id="submit">Submit</button>
+
+    <div class="board">
+        player 2
+        <ul>
+            <li id="player_2_num_20s">-</li>
+            <li id="player_2_num_19s">-</li>
+            <li id="player_2_num_18s">-</li>
+            <li id="player_2_num_17s">-</li>
+            <li id="player_2_num_16s">-</li>
+            <li id="player_2_num_15s">-</li>
+            <li id="player_2_num_bulls">-</li>
+            <li id="player_2_score"></li>
+        </ul>     
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ url_for('static', filename='dartboard.js') }}"></script>
