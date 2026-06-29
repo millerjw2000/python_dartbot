@@ -1,6 +1,12 @@
 from math import *
 from random import *
 
+difficulty_values = {
+    '1' : 60,
+    '2' : 40,
+    '3' : 25,
+}
+
 aimpoints = {
     
     'T20':(0,111),
@@ -141,7 +147,7 @@ class Bot:
 
     def determine_hit(self, aimpoint: str) -> str:
 
-        r = 25
+        r = difficulty_values[self.difficulty]
 
         aimpoint = aimpoints[aimpoint]
         xdist = randint(-r,r)

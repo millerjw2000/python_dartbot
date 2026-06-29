@@ -14,14 +14,14 @@ def index():
 
     return render_template('index.html')
 
-@app.route('/new_game')
-def new_game():
+@app.route('/new_game/difficulty=<difficulty>')
+def new_game(difficulty):
 
     global global_game
     global_game = game.Game()
 
     global global_bot
-    global_bot = bot.Bot(1)
+    global_bot = bot.Bot(difficulty)
     return render_template('game.html')
 
 @app.route('/update_game',methods=["GET","POST"])
