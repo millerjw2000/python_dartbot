@@ -1,21 +1,147 @@
 function renderBoard(gameState) {
 
-    document.getElementById('player_1_num_20s').textContent = gameState.player_1_board["20"][0]
-    document.getElementById('player_1_num_19s').textContent = gameState.player_1_board["19"][0]
-    document.getElementById('player_1_num_18s').textContent = gameState.player_1_board["18"][0]
-    document.getElementById('player_1_num_17s').textContent = gameState.player_1_board["17"][0]
-    document.getElementById('player_1_num_16s').textContent = gameState.player_1_board["16"][0]
-    document.getElementById('player_1_num_15s').textContent = gameState.player_1_board["15"][0]
-    document.getElementById('player_1_num_bulls').textContent = gameState.player_1_board["BULL"][0]
+    //document.getElementById('player_1_num_20s').textContent = gameState.player_1_board["20"][0]
+
+    if (gameState.player_1_board["20"][0] >= 1) {
+        document.getElementById('player_1_20s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["20"][0] >= 2) {
+        document.getElementById('player_1_20s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["20"][0] >= 3) {
+        document.getElementById('player_1_20s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["19"][0] >= 1) {
+        document.getElementById('player_1_19s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["19"][0] >= 2) {
+        document.getElementById('player_1_19s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["19"][0] >= 3) {
+        document.getElementById('player_1_19s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["18"][0] >= 1) {
+        document.getElementById('player_1_18s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["18"][0] >= 2) {
+        document.getElementById('player_1_18s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["18"][0] >= 3) {
+        document.getElementById('player_1_18s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["17"][0] >= 1) {
+        document.getElementById('player_1_17s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["17"][0] >= 2) {
+        document.getElementById('player_1_17s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["17"][0] >= 3) {
+        document.getElementById('player_1_17s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["16"][0] >= 1) {
+        document.getElementById('player_1_16s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["16"][0] >= 2) {
+        document.getElementById('player_1_16s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["16"][0] >= 3) {
+        document.getElementById('player_1_16s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["15"][0] >= 1) {
+        document.getElementById('player_1_15s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["15"][0] >= 2) {
+        document.getElementById('player_1_15s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["15"][0] >= 3) {
+        document.getElementById('player_1_15s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_1_board["BULL"][0] >= 1) {
+        document.getElementById('player_1_bulls_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["BULL"][0] >= 2) {
+        document.getElementById('player_1_bulls_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_1_board["BULL"][0] >= 3) {
+        document.getElementById('player_1_bulls_3').classList.replace('unselected','selected')
+    }
     document.getElementById('player_1_score').textContent = gameState.player_1_score
 
-    document.getElementById('player_2_num_20s').textContent = gameState.player_2_board["20"][0]
-    document.getElementById('player_2_num_19s').textContent = gameState.player_2_board["19"][0]
-    document.getElementById('player_2_num_18s').textContent = gameState.player_2_board["18"][0]
-    document.getElementById('player_2_num_17s').textContent = gameState.player_2_board["17"][0]
-    document.getElementById('player_2_num_16s').textContent = gameState.player_2_board["16"][0]
-    document.getElementById('player_2_num_15s').textContent = gameState.player_2_board["15"][0]
-    document.getElementById('player_2_num_bulls').textContent = gameState.player_2_board["BULL"][0]
+    if (gameState.player_2_board["20"][0] >= 1) {
+        document.getElementById('player_2_20s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["20"][0] >= 2) {
+        document.getElementById('player_2_20s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["20"][0] >= 3) {
+        document.getElementById('player_2_20s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["19"][0] >= 1) {
+        document.getElementById('player_2_19s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["19"][0] >= 2) {
+        document.getElementById('player_2_19s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["19"][0] >= 3) {
+        document.getElementById('player_2_19s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["18"][0] >= 1) {
+        document.getElementById('player_2_18s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["18"][0] >= 2) {
+        document.getElementById('player_2_18s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["18"][0] >= 3) {
+        document.getElementById('player_2_18s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["17"][0] >= 1) {
+        document.getElementById('player_2_17s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["17"][0] >= 2) {
+        document.getElementById('player_2_17s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["17"][0] >= 3) {
+        document.getElementById('player_2_17s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["16"][0] >= 1) {
+        document.getElementById('player_2_16s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["16"][0] >= 2) {
+        document.getElementById('player_2_16s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["16"][0] >= 3) {
+        document.getElementById('player_2_16s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["15"][0] >= 1) {
+        document.getElementById('player_2_15s_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["15"][0] >= 2) {
+        document.getElementById('player_2_15s_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["15"][0] >= 3) {
+        document.getElementById('player_2_15s_3').classList.replace('unselected','selected')
+    }
+
+    if (gameState.player_2_board["BULL"][0] >= 1) {
+        document.getElementById('player_2_bulls_1').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["BULL"][0] >= 2) {
+        document.getElementById('player_2_bulls_2').classList.replace('unselected','selected')
+    }
+    if (gameState.player_2_board["BULL"][0] >= 3) {
+        document.getElementById('player_2_bulls_3').classList.replace('unselected','selected')
+    }
     document.getElementById('player_2_score').textContent = gameState.player_2_score
 
 }
