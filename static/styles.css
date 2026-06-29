@@ -190,5 +190,33 @@ footer a {
     fill: white;
 }
 
+.message_section {
+    height: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    list-style-type: none;
+    font-size: .75rem;
+}
 
+.message_section li {
+    margin-bottom: .25rem;
+}
 
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible_delayed {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease;
+    color: var(--secondary-font-color)
+}
+
+.announcement {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--font-color)
+}

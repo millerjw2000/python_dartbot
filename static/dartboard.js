@@ -1,3 +1,22 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function hideMessages() {
+    for (let i = 1; i <= 3; i++) {
+        const msg = document.getElementById(`message_${i}`);
+        msg.textContent = "";
+        msg.classList.replace("visible_delayed", "hidden");
+    }
+}
+
+async function showMessage(index, text) {
+    const msg = document.getElementById(`message_${index}`);
+    msg.textContent = text;
+    msg.classList.replace("hidden", "visible_delayed");
+    await sleep(1000);
+}
+
 function renderBoard(gameState) {
 
     //document.getElementById('player_1_num_20s').textContent = gameState.player_1_board["20"][0]
@@ -304,10 +323,40 @@ document.getElementById("submit").addEventListener("click", async () => {
     });
 
     const gameState = await response.json();
-    renderBoard(gameState)
-    console.log(gameState);
 
-    throws = []
-    renderEntries()
+    console.log(gameState)
+
+    renderBoard(gameState);
+
+    throws = [];
+    renderEntries();
+
+    hideMessages();
+
+    // Player wins immediately
+    if (gameState.winner === 1) {
+        //await showMessage(1, "Player 1 has won!");
+        document.getElementById('message_1').textContent = 'Player 1 has won!'
+        document.getElementById('message_1').classList.replace("hidden", "visible_delayed");
+        document.getElementById('message_1').classList.add('announcement')
+        return;
+    }
+
+    // Bot turn narration
+    await sleep(1000)
+    for (let i = 0; i < gameState.bot_history.length; i++) {
+        await showMessage(i + 1, gameState.bot_history[i]);
+    }
+
+    // Bot wins after its turn
+    if (gameState.winner === 2) {
+        await sleep(1000);
+
+        hideMessages();
+
+        document.getElementById('message_1').textContent = 'Player 2 has won!'
+        document.getElementById('message_1').classList.replace("hidden", "visible_delayed");
+        document.getElementById('message_1').classList.add('announcement')
+    }
 
 });
