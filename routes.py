@@ -46,6 +46,7 @@ def update_game():
         # ['T20', '5', 'D20']
         response = {}
         response['winner'] = 0
+        response['difficulty'] = global_bot.difficulty
 
         global_game.enter_hit(1,throws[0])
         global_game.enter_hit(1,throws[1])
