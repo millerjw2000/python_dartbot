@@ -2,6 +2,8 @@
 
 A browser-based game of Cricket Darts where you can play against a computer-controlled opponent with three different difficulty levels. Click directly on the dartboard to record your throws, review or undo your selections, and submit your turn when you're satisfied. The bot will then take its turn before the game state updates in real time.
 
+Currently this app is being hosted and deployed on Render using their free tier. As part of their free tier, the app will wind down after a period of inactivity. Due to this, there may be a Render loading screen when attempting to access the app, caused by Render reloading the application.
+
 ## Features
  - Interactive clickable dartboard
  - Three AI difficulty levels:
