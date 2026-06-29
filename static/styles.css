@@ -94,6 +94,7 @@ footer a {
     border: 1px solid var(--font-color);
 
 }
+
 .unselected {
 
     background: none;
@@ -219,4 +220,59 @@ footer a {
     font-size: 1rem;
     font-weight: 600;
     color: var(--font-color)
+}
+
+.new_game_form {
+    margin-top: 10rem;
+    width: 20rem;
+    height: 13rem;
+    display: flex;
+    border: 1px solid var(--secondary-color);
+    border-radius: 1rem;
+    font-weight: 600;
+    background-color: var(--tertiary-color);
+}
+
+.new_game_form table {
+    width: 100%;
+    height: 100%;
+}
+
+.new_game_form td {
+    text-align: center;
+}
+
+.difficulty_labels {
+    font-size: .75rem;
+}
+
+.difficulty_section {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+}
+
+.difficulty {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid var(--font-color);
+    border-radius: 2rem;
+}
+
+#new_game_submit_button {
+    border-style: none;
+    font-family: inherit;
+    font-weight: 600;
+    width: 10rem;
+    align-self: center;
+    height: 2rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: .5rem;
+    background-color: var(--primary-color);
+    font-size: .75rem;
+    color: inherit;
+}
+
+#new_game_submit_button:hover {
+    background-color: var(--secondary-color);
 }

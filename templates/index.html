@@ -5,5 +5,44 @@ Home page
 {% endblock %}
 
 {% block content %}
-    <h1> Home Page!</h1>
+    
+    <div class="new_game_form">
+        <table>
+            <tr>
+                <td colspan="5">New game</td>
+            </tr>
+            <tr class="difficulty_labels">
+                <td>Easy</td>
+                <td></td>
+                <td>Medium</td>
+                <td></td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="difficulty_section">
+                        <div id='diff_1' class='difficulty unselected'></div>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="difficulty_section">
+                        <div id='diff_2' class='difficulty unselected'></div>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="difficulty_section">
+                        <div id='diff_3' class='difficulty unselected'></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5"><button id='new_game_submit_button'>Go!</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
 {% endblock %}
