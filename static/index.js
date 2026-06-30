@@ -37,7 +37,6 @@ new_game_submit_button.addEventListener("click", function(event) {
         return
     }
 
-    console.log('dsadsadsadsadsa')
     window.location.href = (`/new_game/difficulty=${selected_diff}`);
 
 });
