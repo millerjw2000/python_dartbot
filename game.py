@@ -65,14 +65,15 @@ class Game:
         for player_index in range(2):
 
             player_score = 0
-
-            for targ in self.player_boards[player_index].values():
+            opposite_player = 0 if player_index == 1 else 1
+            for targ in self.player_boards[player_index]:
                 
                 #print(targ)
-                if targ[0] > 3:
 
-                    n = targ[0] - 3
-                    player_score += targ[1] * n
+                if self.player_boards[player_index][targ][0] > 3 and self.player_boards[opposite_player][targ][0] < 3:
+
+                    n = self.player_boards[player_index][targ][0] - 3
+                    player_score += self.player_boards[player_index][targ][1] * n
 
             self.player_scores[player_index] = player_score
 
