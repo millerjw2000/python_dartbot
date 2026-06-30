@@ -4,6 +4,8 @@ import sys
 import game
 import bot
 
+# this file is basically just for testing the backend with out having to run the flask app
+
 def main():
 
     if len(sys.argv) != 2:
