@@ -4,7 +4,7 @@ import sys
 import game
 import bot
 
-# this file is basically just for testing the backend with out having to run the flask app
+# this file is basically just for testing the backend without having to run the flask app
 
 def main():
 
